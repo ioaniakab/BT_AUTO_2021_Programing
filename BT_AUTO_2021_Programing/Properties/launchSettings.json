@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "BT_AUTO_2021_Programing": {
+      "commandName": "Project",
+      "commandLineArgs": "abc 123 Ana are coronita"
+    }
+  }
+}
