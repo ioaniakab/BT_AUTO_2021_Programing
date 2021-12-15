@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-
+/*
 namespace BT_AUTO_2021_Programing
 {
     class Circle
@@ -11,7 +11,7 @@ namespace BT_AUTO_2021_Programing
 
     public void SetRadius(double circleRadius)
     {
-        circleRadius = circleRadius;
+       this.Radius = circleRadius;
     }
     public double GetArea()
     {
@@ -22,4 +22,4 @@ namespace BT_AUTO_2021_Programing
     {
         Console.WriteLine("Circle with radius {0} has the area {1}", radius, GetArea());
     }
-}
+} */

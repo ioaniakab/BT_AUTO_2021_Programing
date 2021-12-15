@@ -9,7 +9,7 @@ namespace BT_AUTO_2021_Programing
         double lenght;
         double width;
 
-        public void SetSize(double length, double width)
+        /*public void SetSize(double length, double width)
         {
             this.length = lenght;
             this.width = width;
@@ -22,7 +22,9 @@ namespace BT_AUTO_2021_Programing
 
         public void PrintRectangle()
         {
-            Console.WriteLine("Rectangles area is {0}", GetArea)
+            Console.WriteLine("Rectangles area is {0}", GetArea);
         }
+
+        */
     }
 }

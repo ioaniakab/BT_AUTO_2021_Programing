@@ -12,24 +12,24 @@ namespace BT_AUTO_2021_Programing
         bool isHungry;
         DateTime dob;
 
-        void Eat()
+        public void Eat()
         {
             Console.WriteLine("The person is eating ......");
             isHungry = true;
         }
 
-        void Running ()
+        public void Running ()
         {
             Console.WriteLine("The person is running for his health!");
             isHungry = true;
         }
 
-        void SetName(string personName)
+        public void SetName(string personName)
         {
             name = personName;
         }
 
-        void SetSex(Char personSex)
+        public void SetSex(Char personSex)
         {
             sex = personSex;
         }
