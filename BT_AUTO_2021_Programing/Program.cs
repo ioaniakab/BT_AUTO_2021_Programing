@@ -1,269 +1,335 @@
-﻿using System;
+using System;
 
 namespace BT_AUTO_2021_Programing
 {
     class Program
     {
-
         static void Main(string[] args)
         {
-            // Course01(args);
-            // Course02(args);
-            Course03(args);
+            //Course01(args);
+            //Course02(args);
+            //Course03(args);
+            //ExOneSwitchCase(args);
+            //ExOneIfElse(args);
+            //ExTwo(args);
+            //ExThreePalindrome(args);
+            //PrimeNoLessN(args);
+            Course04();
 
         }
-        /* static void Main(string[] args)
-         {
 
-         void Course01(string[] args)
-         const int MAX_SIZE = 100;
-             const double PI = 3.141592;
-             const int MAX_NUMBER = 5;
-             Console.WriteLine("Hello World!");
-             Console.WriteLine("Ana are mere");
-             Console.WriteLine(2 + 6);
-             Console.WriteLine("2 + 6");
-             int numberOfStudents = 5;
-             int count;
-             int a, b;
-             a = numberOfStudents + 1;
-             a = a + numberOfStudents;
-             short s = 5;
-             ulong ul = 65;
-             float numberFloat = 5.6F;
-             double numberDouble = 5.6;
-             float f = (float)numberDouble;
-             int numberInt = (int)f;
-             long l = numberOfStudents;
-             Console.WriteLine(typeof(int).IsPrimitive);
-             bool myBoolean = false;
-             char ch = (char)100; // '1' != 1
-             string myString = "Ana are mere si pere";
-             Console.WriteLine(myString + " si struguri");
-             string result = a + " si struguri";
-             Console.WriteLine(result);
-             DateTime dataCurenta = new DateTime(2021, 12, 8);
-             Console.WriteLine(dataCurenta);
-             Console.WriteLine(numberFloat * a);
-             Console.WriteLine(numberDouble / a);
-             Console.WriteLine(5 / 6.0);
-             Console.WriteLine(5 % 6);
-             int x = 2;
-             x += 5; // x = x + 5;
-             Console.WriteLine(x++); // x = x +5;
-             // x++ <=> x = x + 1;
-             //++x <=> x = x + 1;
-             Console.WriteLine(++x);
-             Console.WriteLine((x < a) ^ (x == a));
-             int number = 3;
-             Console.WriteLine("Number tested is " + number);
-             if (number >= 0)
-             {
-                 Console.WriteLine("Number is positive");
-             }
-             else
-             {
-                 Console.WriteLine("NUmber is negative");
-             }
-             if (number % 2 == 0)
-             {
-                 Console.WriteLine("Even number!");
-             }
-             else
-             {
-                 Console.WriteLine("Odd number!");
-             }
-             if (number <= 40 && number >= 0)
-             {
-                 if (number <= 20)
-                 {
-                     Console.WriteLine("Student failed!");
-                 }
-                 else
-                 {
-                     Console.WriteLine("Student passed!");
-                 }
-             }
-             else
-             {
-                 Console.WriteLine("Grade is invalid!");
-             }
-             // One line if / else
-             String message = (number % 2 == 0) ? "Even" : "Odd";
-             Console.WriteLine(message);
-             if (number == 1)
-             {
-                 Console.WriteLine("Monday");
-             }
-             if (number == 2)
-             {
-                 Console.WriteLine("Thuesday");
-             }
-             if (number == 3)
-             {
-                 Console.WriteLine("We");
-             }
-             if (number == 4)
-             {
-                 Console.WriteLine("Tu");
-             }
-             if (number == 5)
-             {
-                 Console.WriteLine("Fr");
-             }
-             if (number == 6)
-             {
-                 Console.WriteLine("Sath");
-             }
-             if (number == 7)
-             {
-                 Console.WriteLine("Sunday");
-             }
-             if (number < 1 || number > 7)
-             {
-                 Console.WriteLine("Sorry not a valid day");
-             }
-             switch (number)
-             {
-                 case 1:
-                     {
-                         Console.WriteLine("Monday");
-                         break;
-                     }
-                 case 2:
-                     {
-                         Console.WriteLine("Tuesday");
-                         break;
-                     }
-                 case 3:
-                     {
-                         Console.WriteLine("Wednesday");
-                         break;
-                     }
-                 case 4:
-                     {
-                         Console.WriteLine("Thursday");
-                         break;
-                     }
-                 case 5:
-                     {
-                         Console.WriteLine("Friday");
-                         break;
-                     }
-                 case 6:
-                     {
-                         Console.WriteLine("Saturday");
-                         break;
-                     }
-                 case 7:
-                     {
-                         Console.WriteLine("Sunday");
-                         break;
-                     }
-                 default:
-                     {
-                         Console.WriteLine("Not a valid day");
-                         break;
-                     }
-             }
-             int counter = 0;
-             while (counter <= MAX_NUMBER)
-             {
-                 Console.WriteLine("Current number is: " + counter);
-                 counter++;
-             }
-             counter = 0;
-             do
-             {
-                 Console.WriteLine("Current number is: " + counter);
-                 counter++;
-             }
-             while (counter <= MAX_NUMBER);
-             for (counter = 0; counter <= MAX_NUMBER; counter++)
-                 //Console.WriteLine("Current number is: " = counter);
-                 Console.WriteLine("Current number is: {0} " + counter);
-             Console.WriteLine("Current number is: " + counter);
-         }
-         foreach (string argument in args)
+
+        static void Course04()
         {
-            Console.WriteLine("The argument is: {0}", argument);
+            DrawFullShape(5, 3);
+            Console.WriteLine();
+            DrawFullShape2(5, 3);
+            Console.WriteLine();
+            DrawShapeOutline(8, 11);
+            DrawShapeOutilne2(13, 22);
+            Console.WriteLine();
+            DrawShapeCorners(10, 13);
+            Console.WriteLine();
+            DrawShapeCorners2(10, 13);
+
+            Circle c1 = new Circle(); // instantiate c1 with default(no params) constructor
+            Circle c2 = new Circle(10);  // instatiate c2 with constructor having 1 double parameter
+            c1.PrintCircle();
+            c2.PrintCircle();
+
+            Person p1 = new Person();
+            Person p2 = new Person("Alex", 'm', new string[] { " Romanian " }, false, new DateTime());
+
+            StructExample se = new StructExample();
+            StructExample.MyStruct myStruct = new StructExample.MyStruct();
+            myStruct.Assign(100, "abc");
+            Console.WriteLine(myStruct.ComputeSum());
+
+            StructExample.Rectangle3d r2 = new StructExample.Rectangle3d();
+            r2.Assign(2, 5, 8);
+            Console.WriteLine(r2.GetVolume()); 
         }
 
+        
+        static void Course01(string[] args)
+        {
+            const int MAX_SIZE = 100;
+            const double PI = 3.141592;
+            const int MAX_NUMBER = 5;
 
-        for (counter = 0; counter < args.Length; counter++)
+            Console.WriteLine("Hello World!");
+            Console.WriteLine("Ana are mere");
+            Console.WriteLine(2 + 6);
+            Console.WriteLine("6 + 2");
+
+            int numberOfStudents = 5;
+            int count;
+            int a, b;
+            a = numberOfStudents + 1;
+            //a = a + b;
+            a = a + numberOfStudents;
+            short s = 5;
+            ulong ul = 65;
+
+            float numberFloat = 5.6F;
+            double numberDouble = 5.6;
+
+            float f = (float)numberDouble;
+            int numberInt = (int)f;
+            long l = numberOfStudents;
+
+            Console.WriteLine(typeof(int).IsPrimitive);
+
+
+            bool myBoolean = false;
+
+            char ch = 'd'; // '1' != 1
+
+            string myString = "Ana are mere si pere";
+            string result = a + " si struguri";
+
+            Console.WriteLine(result);
+
+            DateTime dataCurenta = new DateTime(2021, 12, 8);
+            Console.WriteLine(dataCurenta);
+
+            Console.WriteLine(numberDouble * a);
+            Console.WriteLine(numberFloat * a);
+            Console.WriteLine(numberFloat / a);
+            Console.WriteLine(5 / 6.0);
+            Console.WriteLine(5 % 6);
+
+
+            int x = 2;
+            x += 5; // x = x + 5;
+                    // x++ <=> x = x +1;
+                    // ++x <=> x = x +1;
+            Console.WriteLine(x++);
+            Console.WriteLine((x < a) || (x == a));
+
+            int number = 100;
+            Console.WriteLine("Number tested is" + number);
+
+            if (number >= 0)
+            {
+                Console.WriteLine("Number is positive");
+            }
+            else
+            {
+                Console.WriteLine("Number is negative");
+            }
+
+            if (number % 2 == 0)
+            {
+                Console.WriteLine("Even number!");
+            }
+            else
+            {
+                Console.WriteLine("Odd number!");
+            }
+
+            if (number <= 40 && number >= 0)
+            {
+                if (number <= 20)
+                {
+                    Console.WriteLine("Student failed!");
+                }
+                else
+                {
+                    Console.WriteLine("Student passed!");
+                }
+            }
+            else
+            {
+                Console.WriteLine("Grade is invalid!");
+            }
+
+            // One line if / else
+            String message = (number % 2 == 0) ? "Even" : "Odd";
+            Console.WriteLine(message);
+            //Console.WriteLine((number % 2 == 0) ? "Even" : "Odd"));
+
+            if (number == 1)
+            {
+                Console.WriteLine("Monday");
+            }
+            if (number == 3)
+            {
+                Console.WriteLine("Tuesday");
+            }
+            if (number == 3)
+            {
+                Console.WriteLine("Wendnesday");
+            }
+            if (number == 4)
+            {
+                Console.WriteLine("Thursday");
+            }
+            if (number == 5)
+            {
+                Console.WriteLine("Friday");
+            }
+            if (number == 6)
+            {
+                Console.WriteLine("Saturday");
+            }
+            if (number == 7)
+            {
+                Console.WriteLine("Sunday");
+            }
+            if (number <= 1 || number > 7)
+            {
+                Console.WriteLine("Sorry not a valid day!");
+            }
+
+            switch (number)
+            {
+                case 1:
                     {
-                        Console.WriteLine("The argument is: {0}", args[argument]);
+                        Console.WriteLine("Monday");
+                        break;
                     }
+                case 2:
+                    {
+                        Console.WriteLine("Tuesday");
+                        break;
+                    }
+                case 3:
+                    {
+                        Console.WriteLine("Wednesday");
+                        break;
+                    }
+                case 4:
+                    {
+                        Console.WriteLine("Thursday");
+                        break;
+                    }
+                case 5:
+                    {
+                        Console.WriteLine("Friday");
+                        break;
+                    }
+                case 6:
+                    {
+                        Console.WriteLine("Saturnday");
+                        break;
+                    }
+                case 7:
+                    {
+                        Console.WriteLine("Sunday");
+                        break;
+                    }
+                    //default:
+                    {
+                        Console.WriteLine("Not a valid day!");
+                    }
+            }
 
+            int counter = 0;
+            while (counter <= MAX_NUMBER)
+            {
+                Console.WriteLine("Current number is:" + counter);
+                counter++;
+            }
 
-        int year = 1900;
+            counter = 0;
+            do
+            {
+                Console.WriteLine("Current number is: " + counter);
+                counter++;
+            }
+            while (counter <= MAX_NUMBER);
+
+            for (counter = 0; counter <= MAX_NUMBER; counter++)
+            {
+                Console.WriteLine("Current number is: {0}", counter);
+            }
+
+            foreach (string argumnet in args)
+            {
+                Console.WriteLine("The argument is: {0}", argumnet);
+            }
+
+            int year1 = 2015;
             int febDays = 28;
-            if (year % 100 == 0 && year % 400 != 0)
+
+            if (year1 % 4 == 0)
+            {
+                if (year1 % 100 == 0 && year1 % 400 != 0)
                 {
                     febDays = 29;
                 }
-            if (year % 100 != 0)
+                if (year1 % 100 == 0 && year1 % 400 == 0)
+                {
+                    febDays = 28;
+                }
+                if (year1 % 100 != 0)
+                {
+                    febDays = 29;
+                }
+            }
+            else
             {
                 febDays = 28;
-               }
-            if (year % 100 != 0)
-            {
-            febDays = 28
+            }
             Console.WriteLine("February has {0} days", febDays);
-                
-            }
-            if ((year % 4 == 0 && year % 100 == 0 && year % 400 != 0) || (year % 4 == 0 && year % 100 !- 0))
+
+            if ((year1 % 4 == 0 && year1 % 100 == 0 && year1 % 400 != 0) || (year1 % 4 == 0 && year1 % 100 != 0))
             {
-            febDays = 29;
+                febDays = 29;
             }
 
+            //int year = 1900;
+            foreach (string yr in args)
+            {
+                //int febDays = 28;
+                int year = int.Parse(yr);
+                if (year < 1900 || year > 2016)
+                {
+                    Console.WriteLine("Year is out of valid bound (1900 - 2016)");
+                }
 
-    */
+                if ((year % 4 == 0 && year % 100 == 0 && year % 400 != 0) || (year % 4 == 0 && year % 100 != 0))
+                {
+                    febDays = 29;
+                }
 
+                Console.WriteLine("February has {0} days for year {1}", febDays, year);
+            }
+        }
 
-
-
-        public static void Course02(string[] args)
+        static void Course02(string[] args)
         {
-            /*
             Circle c1 = new Circle();
             Circle c2; // c2 will be null!!!
             c1.SetRadius(10);
-            //double area = c1.GetArea();
-            //Console.WriteLine(area);
+            double area = c1.GetArea();
+            // double area = c1.GetArea():
+            Console.WriteLine(c1.GetArea());
             Circle c3 = new Circle();
             c3.SetRadius(5);
-            // Console.WriteLine(area);
+            Console.WriteLine(c3.GetArea());
+            c3.PrintCircle();
 
             foreach (string p in args)
             {
                 Circle c = new Circle();
                 c.SetRadius(Double.Parse(p));
-                Square s = new Square();
-                s.SetSide(double.Parse(p));
-                Rectangle r = new Rectangle();
                 c.PrintCircle();
-                c.PrintSquare();
-                r.PrintRectangle;
+                Square s = new Square();
+                s.PrintSquare();
             }
-            
+
             Person p1 = new Person();
-                p1.SetName("Alex");
+            p1.SetName("Alex");
             p1.SetSex('m');
-            p1.Eat();
+            p1.eat();
             p1.Run();
-            p1.Eat();
-            p1.PrintPerson;
+            p1.eat();
+            p1.PrintPerson();
 
-            Rectangle r1 = new Rectangle();
-            r1.SetSize(2, 3);
-            r1.PrintRectangle();
-            */
         }
-
-
-
-
+        
         static void Course03(string[] args)
         {
             ComputerConversion(args);
@@ -272,13 +338,13 @@ namespace BT_AUTO_2021_Programing
             Shape s = GetShape(12, 34, 12.4, '1', "17d");
             string s2 = ConcatenateStrings(args);
             Console.WriteLine(s2);
-            Random rnd = new Random();
-            GuessNumber(rnd.Next(1,1000));
+            //  Random rnd = new Random();
+            //  GuessNumber(rnd.Next(1, 1000));
         }
 
         static bool IsOddNumber(int number)
         {
-           return number % 2 != 0;
+            return number % 2 != 0;
         }
         static Shape GetShape(int x, int y, double a, char t, String s)
         {
@@ -290,7 +356,7 @@ namespace BT_AUTO_2021_Programing
         {
             string returnString = "";
 
-            foreach(string s in args)
+            foreach (string s in args)
             {
                 returnString += s; // returnString = returnString + 2;
             }
@@ -314,21 +380,21 @@ namespace BT_AUTO_2021_Programing
             }
         }
         static void CurrencyCalculator(double amount, string currency, double conversionRate)
-                {
-                    Console.WriteLine("By converting {0} {1} into RON we obtain {2} RON", amount, currency, amount * conversionRate);
-                }
-          
+        {
+            Console.WriteLine("By converting {0} {1} into RON we obtain {2} RON", amount, currency, amount * conversionRate);
+        }
+
         static int TestValue(int testVal, int target)
         {
             if (testVal < target)
             {
                 Console.WriteLine("Number to be guessed is higher!");
-                return  -1;
+                return -1;
             }
             if (testVal > target)
             {
                 Console.WriteLine("Number to be guessed is lower!");
-                return  1;
+                return 1;
             }
             Console.WriteLine("Bazinga! This is the number!");
             return 0;
@@ -343,6 +409,332 @@ namespace BT_AUTO_2021_Programing
                 Console.WriteLine("Number chose is {0}", currentNumber);
             }
             while (TestValue(currentNumber, n) != 0);
+
         }
+
+
+        public static void ExOneSwitchCase(string[] args)
+        {
+
+            if (args.Length == 3)
+            {
+
+                float a = float.Parse(args[0]);
+
+                float b = float.Parse(args[2]);
+
+                string op = args[1];
+
+                // implement calculator logic here
+
+
+                switch (op)
+                {
+                    case "+":
+                        float result = a + b;
+                        Console.WriteLine("Result is: {0} ", result);
+                        break;
+                }
+
+                switch (op)
+                {
+                    case "-":
+                        float result = a - b;
+                        Console.WriteLine("Result is: {0}", result);
+                        break;
+                }
+
+                switch (op)
+                {
+                    case "*":
+                        float result = a * b;
+                        Console.WriteLine("Result is: {0}", result);
+                        break;
+                }
+
+                switch (op)
+                {
+                    case "/":
+
+                        float result = a / b;
+                        Console.WriteLine("Result is: {0}", result);
+                        break;
+                }
+                /*default:
+                        {
+                            Console.WriteLine("Please introduce one of followin operators: +, -, / or *");
+                            break;
+                        }
+                */
+            }
+            else
+            {
+
+                Console.WriteLine("3 args are needed!");
+
+            }
+        }
+
+        public static void ExOneIfElse(string[] args)
+            {
+
+                if (args.Length == 3)
+                {
+
+                    float a = float.Parse(args[0]);
+
+                    float b = float.Parse(args[2]);
+
+                    string op = args[1];
+
+                    float result = 0;
+                // implement calculator logic here
+                    if (op == "+")
+                    {
+                        result = a + b;
+                    Console.WriteLine("Result is: {0}", result);
+                    }
+                    if (op == "-")
+                        {
+                        result = a - b;
+                        Console.WriteLine("Result is: {0}", result);
+                        }
+                    if (op == "*")
+                    {
+                    result = a * b;
+                    Console.WriteLine("Result is: {0}", result);
+                    }
+                    if (op == "/")
+                    {
+                    result = a / b;
+                    Console.WriteLine("Result is: {0}", result);
+                    }
+                    if (op != "+" || op !="-" || op !="*" || op != "/")
+                    {
+                    Console.WriteLine("Please introduce one of followin operators: +, -, / or *");
+                    }
+
+                    
+                }
+                else
+                {
+
+                    Console.WriteLine("3 args are needed!");
+
+                }
+            }
+
+        public static void ExTwo(string[] args)
+        {
+            int j = 100;
+            int i = 0, result = 0;
+            //int sum = 0;
+
+            for (i = 0; i <= j; i++)
+            {
+                //i = i++;
+                result = result + i;
+            }
+            Console.WriteLine("The sum of first {0} numbers is: {1}", j, result);
+        }
+
+        static bool CheckPalindrome(string number)
+        {
+            int len = number.Length;
+            for (int i = 0; i < len / 2; i++)
+            {
+                if (number[i] != number[len - i - 1])
+                    return false;
+            }
+            return true;
+        }
+        public static void ExThreePalindrome(string[] no)
+        {
+            string nr = "9911231321199";
+
+            if (CheckPalindrome(nr) == true)
+                Console.Write("The text {0} is a palindrome", nr);
+            else
+                Console.Write("The text {0} is not a palindrome", nr);
+        }
+
+
+        static bool PrimeNo(int n)
+        {
+            if (n < 1)
+                return false;
+
+            for (int i = 2; i < n; i++)
+                if (n % i == 0)
+                    return false;
+
+            return true;
+        }
+
+        static void ShowPrime(int n)
+        {
+            for (int i = 1; i <= n; i++)
+            {
+                if (PrimeNo(i))
+                    Console.Write(i + " ");
+            }
+        }
+        public static void PrimeNoLessN(string[] args)
+        {
+            int n = 23;
+            Console.WriteLine("The prime numbers lower than [0] are: ", n); ShowPrime(n);
+        }
+
+        
+        public static void DrawFullShape(int width, int height)
+        {
+            for (int j = 0; j < height; j++)
+            {
+                for (int i = 0; i < width; i++) // this will print a single line{
+                {
+                    Console.Write("*");
+                }
+                Console.WriteLine();
+            }
+        }
+
+        public static void DrawFullShape2(int width, int height)
+        {
+            string s = "";
+            for (int i = 0; i < width; i++) // this print a single line
+            {
+                s += "*";
+            }
+
+            for (int j = 0; j < height; j++)
+            {
+                Console.WriteLine(s);
+            }
+        }
+
+        public static void DrawShapeOutline(int width, int height)
+        {
+            for (int j = 0; j < height; j++)
+            {
+                for (int i = 0; i < width; i++) // this will print a single line{
+                {
+                    if (j == 0 || j == height - 1)
+                    {
+                        Console.Write("*");
+                    }
+                    else
+                    {
+                        if (i == 0 || i == width - 1)
+                        {
+                            Console.Write("*");
+                        }
+                        else
+                        {
+                            Console.Write(" ");
+                        }
+                    }
+                }
+                Console.WriteLine();
+            }
+        }
+
+        public static void DrawShapeOutilne2(int width, int height)
+        {
+            string s = "";
+            string s1 = "";
+            for (int i = 0; i < width; i++) // this print a single line
+            {
+                s += "*";
+                if (i == 0 || i == width - 1)
+                {
+                    s1 += "*";
+                }
+                else
+                {
+                    s1 += " ";
+                }
+
+            }
+
+            for (int j = 0; j < height; j++)
+            {
+                if(j==0 || j == height - 1)
+                {
+                    Console.WriteLine(s);
+                }
+                else
+                {
+                    Console.WriteLine(s1);
+                }
+                
+            }
+        }
+
+        public static void DrawShapeCorners(int width, int height)
+        {
+            for (int j = 0; j < height; j++)
+            {
+                for (int i = 0; i < width; i++) // this will print a single line{
+                {
+                    //if ((j == 0 && i == 0) || (j == 0 && i == width - 1) || (j == height - 1 && i == 0) || (j == height - 1 && i == width - 1))
+                    if(j==0 || j==height-1)
+                    {
+                        if(i==0|| i == width - 1)
+                            {
+                            Console.Write("*");
+                        }
+                        else
+                        {
+                            Console.Write(" ");
+                        }
+                            
+                    }
+                    else
+                    {
+                        Console.Write(" ");
+                    }
+                    
+                }
+                Console.WriteLine();
+            }
+        }
+
+        public static void DrawShapeCorners2(int width, int height)
+        {
+            string s = "";
+            string s1 = "";
+            for (int i = 0; i < width; i++) // this print a single line
+            {
+                s += " ";
+                if (i == 0 || i == width - 1)
+                {
+                    s1 += "*";
+                }
+                else
+                {
+                    s1 += " ";
+                }
+
+            }
+
+            for (int j = 0; j < height; j++)
+            {
+                if (j == 0 || j == height - 1)
+                {
+                    Console.WriteLine(s1);
+                }
+                else
+                {
+                    Console.WriteLine(s);
+                }
+
+            }
+        }
+
+
+
+
     }
+
 }
+
