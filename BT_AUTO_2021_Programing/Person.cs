@@ -1,9 +1,10 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace BT_AUTO_2021_Programing
 {
+    
     class Person
     {
         string name;
@@ -12,26 +13,39 @@ namespace BT_AUTO_2021_Programing
         bool isHungry;
         DateTime dob;
 
-        public void Eat()
+        public Person(string name, char sex, string[] nationality, bool isHungry, DateTime dob)
         {
-            Console.WriteLine("The person is eating ......");
+            this.name = name;
+            this.sex = sex;
+            this.nationality = nationality;
+            this.isHungry = isHungry;
+            this.dob = dob;
+        }
+
+        public Person()
+        {
+
+        }
+        public void eat()
+        {
+            Console.Write("The person ie eating...........");
+            isHungry = false;
+        }
+
+        public void Run()
+        {
+            Console.WriteLine("The person is running for his health");
             isHungry = true;
         }
 
-        public void Running ()
+        public void SetName(string name)
         {
-            Console.WriteLine("The person is running for his health!");
-            isHungry = true;
+            this.name = name;
         }
 
-        public void SetName(string personName)
+        public void SetSex(char sex)
         {
-            name = personName;
-        }
-
-        public void SetSex(Char personSex)
-        {
-            sex = personSex;
+            this.sex = sex;
         }
         public void PrintPerson()
         {
