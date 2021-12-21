@@ -14,7 +14,8 @@ namespace BT_AUTO_2021_Programing
             //ExTwo(args);
             //ExThreePalindrome(args);
             //PrimeNoLessN(args);
-            Course04();
+            //Course04();
+            Course05();
 
         }
 
@@ -731,6 +732,48 @@ namespace BT_AUTO_2021_Programing
             }
         }
 
+        static void Course05()
+        {
+            DrawShapeOutline(2, 3);
+            DrawShapeOutline(5);
+            DrawShapeCorners(6);
+            DrawFullShape(7);
+
+            Circle c = new Circle(4);
+            Object o = new Object();
+            
+            Triangle t1 = new Triangle(5, 7, 9);
+            t1.Draw();
+            //Square s1 = new Square(5);
+            //Rectangle r1= new Rectangle(2,7);
+            //Console.WriteLine(s1.GetArea());
+            //Console.WriteLine(r1.GetArea());
+            Console.WriteLine(c.ToString());
+            //Console.WriteLine(s1.ToString());
+            Console.WriteLine(t1.ToString());
+
+
+            Teacher teacher1 = new Teacher("Programming", "UPB", 2000, "Gigel Programatoru'", 'm');
+            teacher1.PrintTeacher();
+
+            Student student1 = new Student("An 1", true, true, "Andreea a", 'f');
+            Student1.PrintStudent();
+
+        }
+        public static void DrawShapeOutline(int l)
+        {
+            DrawShapeOutline(l, l);
+        }
+
+        public static void DrawShapeCorners(int l)
+        {
+            DrawShapeCorners(l, l);
+        }
+
+        public static void DrawFullShape(int l)
+        {
+            DrawFullShape(l, l);
+        }
 
 
 

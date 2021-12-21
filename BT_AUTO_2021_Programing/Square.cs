@@ -4,7 +4,7 @@ using System.Text;
 
 namespace BT_AUTO_2021_Programing
 {
-    class Square
+    class Square : Rectangle
     {
         double side;
 
@@ -13,7 +13,7 @@ namespace BT_AUTO_2021_Programing
             this.side = side;
         }
 
-        public double GetArea()
+        public virtual double GetArea()
         {
             return Math.Pow(side, 2);
         }
@@ -21,6 +21,11 @@ namespace BT_AUTO_2021_Programing
         public void PrintSquare()
         {
             Console.WriteLine("The area with side {0} gas the area {1}", side, GetArea());
+        }
+
+        public override string ToString()
+        {
+            return "This is a square eith side " + side;
         }
     }
 }
