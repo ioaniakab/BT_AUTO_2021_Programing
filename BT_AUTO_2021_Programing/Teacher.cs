@@ -22,7 +22,7 @@ namespace BT_AUTO_2021_Programing
 
         }
 
-        public Teacher(string courseSpecialisation, string university, double salary, string name, string sex)
+        public Teacher(string courseSpecialisation, string university, double salary, string name, char sex)
         {
             this.courseSpecialisation = courseSpecialisation;
             this.university = university;

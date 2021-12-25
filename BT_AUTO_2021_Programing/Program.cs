@@ -15,42 +15,15 @@ namespace BT_AUTO_2021_Programing
             //ExThreePalindrome(args);
             //PrimeNoLessN(args);
             //Course04();
-            Course05();
+            //Course05();
+            Course06();
+
+
 
         }
 
-
-        static void Course04()
-        {
-            DrawFullShape(5, 3);
-            Console.WriteLine();
-            DrawFullShape2(5, 3);
-            Console.WriteLine();
-            DrawShapeOutline(8, 11);
-            DrawShapeOutilne2(13, 22);
-            Console.WriteLine();
-            DrawShapeCorners(10, 13);
-            Console.WriteLine();
-            DrawShapeCorners2(10, 13);
-
-            Circle c1 = new Circle(); // instantiate c1 with default(no params) constructor
-            Circle c2 = new Circle(10);  // instatiate c2 with constructor having 1 double parameter
-            c1.PrintCircle();
-            c2.PrintCircle();
-
-            Person p1 = new Person();
-            Person p2 = new Person("Alex", 'm', new string[] { " Romanian " }, false, new DateTime());
-
-            StructExample se = new StructExample();
-            StructExample.MyStruct myStruct = new StructExample.MyStruct();
-            myStruct.Assign(100, "abc");
-            Console.WriteLine(myStruct.ComputeSum());
-
-            StructExample.Rectangle3d r2 = new StructExample.Rectangle3d();
-            r2.Assign(2, 5, 8);
-            Console.WriteLine(r2.GetVolume()); 
-        }
-
+       
+     
         
         static void Course01(string[] args)
         {
@@ -347,6 +320,9 @@ namespace BT_AUTO_2021_Programing
         {
             return number % 2 != 0;
         }
+
+
+
         static Shape GetShape(int x, int y, double a, char t, String s)
         {
             Console.WriteLine(x);
@@ -586,7 +562,39 @@ namespace BT_AUTO_2021_Programing
             Console.WriteLine("The prime numbers lower than [0] are: ", n); ShowPrime(n);
         }
 
-        
+
+
+        static void Course04()
+        {
+            DrawFullShape(5, 3);
+            Console.WriteLine();
+            DrawFullShape2(5, 3);
+            Console.WriteLine();
+            DrawShapeOutline(8, 11);
+            DrawShapeOutilne2(13, 22);
+            Console.WriteLine();
+            DrawShapeCorners(10, 13);
+            Console.WriteLine();
+            DrawShapeCorners2(10, 13);
+
+            Circle c1 = new Circle(); // instantiate c1 with default(no params) constructor
+            Circle c2 = new Circle(10);  // instatiate c2 with constructor having 1 double parameter
+            c1.PrintCircle();
+            c2.PrintCircle();
+
+            Person p1 = new Person();
+            Person p2 = new Person("Alex", 'm', new string[] { " Romanian " }, false, new DateTime());
+
+            StructExample se = new StructExample();
+            StructExample.MyStruct myStruct = new StructExample.MyStruct();
+            myStruct.Assign(100, "abc");
+            Console.WriteLine(myStruct.ComputeSum());
+
+            StructExample.Rectangle3d r2 = new StructExample.Rectangle3d();
+            r2.Assign(2, 5, 8);
+            Console.WriteLine(r2.GetVolume());
+        }
+
         public static void DrawFullShape(int width, int height)
         {
             for (int j = 0; j < height; j++)
@@ -753,11 +761,11 @@ namespace BT_AUTO_2021_Programing
             Console.WriteLine(t1.ToString());
 
 
-            Teacher teacher1 = new Teacher("Programming", "UPB", 2000, "Gigel Programatoru'", 'm');
-            teacher1.PrintTeacher();
+            //Teacher teacher1 = new Teacher("Programming", "UPB", 2000, "Gigel Programatoru'", 'm');
+            //teacher1.PrintTeacher();
 
             Student student1 = new Student("An 1", true, true, "Andreea a", 'f');
-            Student1.PrintStudent();
+            //Student1.PrintStudent();
 
         }
         public static void DrawShapeOutline(int l)
@@ -775,6 +783,36 @@ namespace BT_AUTO_2021_Programing
             DrawFullShape(l, l);
         }
 
+        private static void Course06()
+        {
+            Car c1 = new Car(true, 20, 90);
+            Car c2 = new Car(false, 0, -90);
+            c1.Start();
+            c1.Accelerate();
+            c1.TurnLeft();
+            c1.TurnRight();
+
+            Console.WriteLine(Car.ConvertHPToKw(150));
+
+            Rectangle r1 = new Rectangle(3, 4);
+            Console.WriteLine("Area is {0} Perimeter is {1} Diagonal is {2}", r1.GetArea(), r1.GetPerimeter(), r1.GetDiagonal());
+            r1.PrintRectangle();
+
+            r1.SetLenght(10);
+            r1.PrintRectangle();
+
+            c2.Start();
+            c2.GearUp();
+            c2.Accelerate(20);
+            c2.Steer(20);
+            c2.Accelerate(10);
+            c2.TurnLeft();
+            c2.GearUp();
+            c2.Accelerate();
+            c2.PrintCar();
+
+            c2.CarBrand = "Name";
+        }
 
 
     }
