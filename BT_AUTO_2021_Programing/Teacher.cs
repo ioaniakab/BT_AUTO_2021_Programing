@@ -40,7 +40,6 @@ namespace BT_AUTO_2021_Programing
         {
             base.PrintPerson();
             Console.WriteLine("Teacher works at university {0} on specialisation {1} and has a salary {2}", university, courseSpecialisation, salary);
-
         }
     }
 }

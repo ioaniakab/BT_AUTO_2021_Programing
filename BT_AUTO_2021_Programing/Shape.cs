@@ -15,7 +15,7 @@ namespace BT_AUTO_2021_Programing
 
         public virtual void Erase()
         {
-            Console.WriteLine("Er are erasing the shape!");
+            Console.WriteLine("You are erasing the shape!");
         }
 
 

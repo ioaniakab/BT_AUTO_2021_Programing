@@ -8,12 +8,23 @@ namespace BT_AUTO_2021_Programing
     {
         double side;
 
+        public Square(double side)
+        {
+            this.side = side;
+        }
+
+        public Square()
+        {
+
+        }
         public void SetSide(double side)
         {
             this.side = side;
         }
 
-        public virtual double GetArea()
+        
+
+        public override double GetArea()
         {
             return Math.Pow(side, 2);
         }

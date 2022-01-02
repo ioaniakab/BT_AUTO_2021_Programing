@@ -16,15 +16,104 @@ namespace BT_AUTO_2021_Programing
             //PrimeNoLessN(args);
             //Course04();
             //Course05();
-            Course06();
+            //Course06();
+            HomeWorkVolumes();
 
 
 
         }
 
        
-     
+     static void HomeWorkVolumes()
+        {
+            // Volumes cube1 = new Volumes(5, 5, 5);
+            //cube1.PrintCube();
+
+            //Console.Write("Enter Side: ");
+            //decimal Side = Convert.ToDecimal(Console.ReadLine());
+            //decimal Volume = Side * Side * Side;
+
+            //Console.WriteLine("Volume of cube = " + Volume);
+            //Console.ReadKey();
+            CubeVolume(10, 10, 10);
+            CubeVolume(10);
+            SphereVolume(5);
+            SphereVolume(10,5);
+            PyramidVolume(50, 50);
+            PyramidVolume(50);
+            CylinderVolume(5, 10);
+            CylinderVolume(10);
+            TorusVolume(5, 5.5);
+            TorusVolume(5.5, 5);
+
+            Book book1 = new Book();
+            book1.SetbookName("Captain Nemo");
+            book1.SetPrice(1850);
+            book1.PrintBook();
+
+        }
+
+
+
+        public static void SphereVolume(double radius)
+        {
+            double SphereVol = 4 / 3 * Math.PI *Math .Pow (radius,3);
+            Console.WriteLine("Sphere with radius of {0} have volume is: {1}",radius, + SphereVol);
+        }
         
+        public static void SphereVolume(float diameter, float radius)
+        {
+            double SphereVol = 4 / 3 * Math.PI * Math.Pow(diameter/2, 3);
+
+            Console.WriteLine("Sphere with diameter of {0} and radius of {1} has volume of: {2}", diameter, radius, SphereVol);
+
+        }
+        public static void CubeVolume(int l, int L, int h)
+        {
+            int  CubeVol = l * L * h; 
+            Console.WriteLine("Cube vol is {0}", CubeVol);
+        }
+
+        public static void CubeVolume(double  l)
+        {
+            double  CubeVol = Math.Pow(l, 3);
+            Console.WriteLine("Cube vol is {0}", CubeVol);
+        }
+
+        public static void TorusVolume(int radius, double Radius)
+        {
+            double torusvol = 2 * Math.PI * Radius * Math.Pow(radius, 2);
+            Console.WriteLine("Torus volume is {0} ", torusvol);
+        }
+
+        public static void TorusVolume(double radius, int Radius)
+        {
+            double torusvol = 2 * Math.PI * Radius * Math.Pow(radius, 2);
+            Console.WriteLine("Torus volume is {0} ", torusvol);
+        }
+
+        public static void CylinderVolume(double radius, double height)
+        {
+            double cylvol = Math.PI * Math.Pow(radius, 2) * height;
+            Console.WriteLine("Cylinder volume is {0}", cylvol);
+        }
+
+        public static void CylinderVolume(float l)
+        {
+            float cylvol = (float)(Math.PI * Math.Pow(l, 2) * l);
+            Console.WriteLine("Cylinder volume is {0}", cylvol);
+        }
+        public static void PyramidVolume(double basearea, double height)
+        {
+            double pyramidevol = 0.33 * basearea * height;
+            Console.WriteLine("Pyramide volume is {0}", pyramidevol);
+        }
+
+        public static void PyramidVolume(int l)
+        {
+            double pyramidevol = 0.33 * l * (l / 2);
+            Console.WriteLine("Pyramide volume is {0} ", pyramidevol);
+        }
         static void Course01(string[] args)
         {
             const int MAX_SIZE = 100;
@@ -279,7 +368,8 @@ namespace BT_AUTO_2021_Programing
             c1.SetRadius(10);
             double area = c1.GetArea();
             // double area = c1.GetArea():
-            Console.WriteLine(c1.GetArea());
+            //Console.WriteLine(c1.GetArea());
+            c1.PrintCircle();
             Circle c3 = new Circle();
             c3.SetRadius(5);
             Console.WriteLine(c3.GetArea());
@@ -291,7 +381,13 @@ namespace BT_AUTO_2021_Programing
                 c.SetRadius(Double.Parse(p));
                 c.PrintCircle();
                 Square s = new Square();
+                s.SetSide(double.Parse(p));
+                Rectangle r = new Rectangle();
+                r.SetSize(double.Parse(p), double.Parse(p));
+                c.PrintCircle();
                 s.PrintSquare();
+                r.PrintRectangle();
+
             }
 
             Person p1 = new Person();
@@ -301,6 +397,18 @@ namespace BT_AUTO_2021_Programing
             p1.Run();
             p1.eat();
             p1.PrintPerson();
+
+            //Person p1 = new Person();
+            p1.SetName("Alex");
+            p1.SetSex('m');
+            p1.eat();
+            p1.Run();
+            p1.eat();
+            p1.PrintPerson();
+
+            Rectangle r1 = new Rectangle();
+            r1.SetSize(2, 3);
+            r1.PrintRectangle();
 
         }
         
@@ -585,6 +693,12 @@ namespace BT_AUTO_2021_Programing
             Person p1 = new Person();
             Person p2 = new Person("Alex", 'm', new string[] { " Romanian " }, false, new DateTime());
 
+            Rectangle r1 = new Rectangle(2, 7);
+            r1.PrintRectangle();
+
+            Square s1 = new Square(6);
+            s1.PrintSquare();
+
             StructExample se = new StructExample();
             StructExample.MyStruct myStruct = new StructExample.MyStruct();
             myStruct.Assign(100, "abc");
@@ -606,6 +720,7 @@ namespace BT_AUTO_2021_Programing
                 Console.WriteLine();
             }
         }
+
 
         public static void DrawFullShape2(int width, int height)
         {
@@ -749,15 +864,16 @@ namespace BT_AUTO_2021_Programing
 
             Circle c = new Circle(4);
             Object o = new Object();
-            
+            c.Draw();
+
             Triangle t1 = new Triangle(5, 7, 9);
             t1.Draw();
-            //Square s1 = new Square(5);
-            //Rectangle r1= new Rectangle(2,7);
-            //Console.WriteLine(s1.GetArea());
-            //Console.WriteLine(r1.GetArea());
+            Square s1 = new Square(5);
+            Rectangle r1= new Rectangle(2,7);
+            Console.WriteLine(s1.GetArea());
+            Console.WriteLine(r1.GetArea());
             Console.WriteLine(c.ToString());
-            //Console.WriteLine(s1.ToString());
+            Console.WriteLine(s1.ToString());
             Console.WriteLine(t1.ToString());
 
 
