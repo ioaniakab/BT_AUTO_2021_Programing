@@ -12,7 +12,7 @@ namespace BT_AUTO_2021_Programing
 
         public Book(string bookName, int year, string Name, double price)
         {
-            this.bookName = Name;
+            this.bookName = bookName;
             this.year = year;
             this.price = price;
             this.SetName(Name);
@@ -28,7 +28,7 @@ namespace BT_AUTO_2021_Programing
             return bookName;
         }
 
-        public void SetbookName(string Name)
+        public void SetbookName(string bookName)
         {
             if (bookName != "" && bookName != " ")
             {
@@ -77,10 +77,15 @@ namespace BT_AUTO_2021_Programing
         
         public void PrintBook()
         {
-            Console.WriteLine("Book's name is" + bookName);
+            Console.WriteLine("Book's name is {0} with a price of {1}", bookName, price);
+            Console.WriteLine("Book" + bookName);
+                       
+        }
+
+        public void PrintBook2()
+        {
             Console.WriteLine("Year of book's publishing is " + year);
-            Console.WriteLine("The book price is " + price);
-            //Console.WriteLine("The book author is {0}", SetName(Name));
+           
         }
 
     }

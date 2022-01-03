@@ -30,7 +30,7 @@ namespace BT_AUTO_2021_Programing
 
         public void PrintStudent()
         {
-        base.PrintPerson();
+            base.PrintPerson();
             Console.WriteLine("Current study year is {0}", currentStudyYear);
             Console.WriteLine("Dormroom status: {0}", hasDormRoom);
             Console.WriteLine("Scholarship status: {0}", hasScholarship);

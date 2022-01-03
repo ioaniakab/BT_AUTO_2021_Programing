@@ -54,7 +54,10 @@ namespace BT_AUTO_2021_Programing
             }
         }
 
-
+        public void PrintAuthor()
+        {
+            Console.WriteLine("Author's name is " + Name);
+        }
 
     }
 }

@@ -17,24 +17,16 @@ namespace BT_AUTO_2021_Programing
             //Course04();
             //Course05();
             //Course06();
-            HomeWorkVolumes();
+            HomeWorkVolumesAndLibrary();
 
 
 
         }
 
        
-     static void HomeWorkVolumes()
+     static void HomeWorkVolumesAndLibrary()
         {
-            // Volumes cube1 = new Volumes(5, 5, 5);
-            //cube1.PrintCube();
-
-            //Console.Write("Enter Side: ");
-            //decimal Side = Convert.ToDecimal(Console.ReadLine());
-            //decimal Volume = Side * Side * Side;
-
-            //Console.WriteLine("Volume of cube = " + Volume);
-            //Console.ReadKey();
+            
             CubeVolume(10, 10, 10);
             CubeVolume(10);
             SphereVolume(5);
@@ -47,9 +39,19 @@ namespace BT_AUTO_2021_Programing
             TorusVolume(5.5, 5);
 
             Book book1 = new Book();
-            book1.SetbookName("Captain Nemo");
-            book1.SetPrice(1850);
+            book1.SetbookName("Twenty Thousand Leagues Under the Seas");
+            book1.SetYear(1871);
+            book1.SetPrice(50);
             book1.PrintBook();
+            book1.PrintBook2();
+           
+            Author Author1 = new Author();
+            Author1.SetName("Jules Verne");
+            Author1.PrintAuthor();
+
+            Library Lib1 = new Library();
+            //Lib1.PrintLibrary();
+            //book1.Library();
 
         }
 

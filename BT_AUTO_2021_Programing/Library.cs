@@ -8,14 +8,21 @@ namespace BT_AUTO_2021_Programing
     {
         public Library(string bookName, string Name, int year)
         {
-            //this.SetbookName = bookName;
-            //this.SetName = Name;
-            //this.SetYear = year;
+            this.SetbookName(bookName);
+            this.SetName(Name);
+            this.SetYear(year);
         }
 
         public Library()
         {
 
+        }
+
+        public void PrintLibrary()
+        {
+            base.PrintBook();
+            base.PrintAuthor();
+            base.PrintBook2();
         }
 
     }
