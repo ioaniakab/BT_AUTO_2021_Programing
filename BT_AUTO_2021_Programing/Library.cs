@@ -6,9 +6,10 @@ namespace BT_AUTO_2021_Programing
 {
     class Library:Book 
     {
-        public Library(string bookName, string Name, int year)
+        public Library(string bookName, double price, string Name, int year)
         {
             this.SetbookName(bookName);
+            this.SetPrice(price);
             this.SetName(Name);
             this.SetYear(year);
         }
@@ -23,6 +24,7 @@ namespace BT_AUTO_2021_Programing
             base.PrintBook();
             base.PrintAuthor();
             base.PrintBook2();
+            
         }
 
     }

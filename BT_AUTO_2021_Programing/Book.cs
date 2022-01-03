@@ -77,14 +77,13 @@ namespace BT_AUTO_2021_Programing
         
         public void PrintBook()
         {
-            Console.WriteLine("Book's name is {0} with a price of {1}", bookName, price);
-            Console.WriteLine("Book" + bookName);
-                       
+            Console.WriteLine("Book's name is {0} with a price of {1} $", bookName, price);
+                                  
         }
 
         public void PrintBook2()
         {
-            Console.WriteLine("Year of book's publishing is " + year);
+            Console.WriteLine("The book was published in " + year);
            
         }
 

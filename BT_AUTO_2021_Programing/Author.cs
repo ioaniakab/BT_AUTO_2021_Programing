@@ -27,7 +27,7 @@ namespace BT_AUTO_2021_Programing
 
         public void SetName(string Name)
         {
-            if (Name == "" || Name == " ")
+            if (Name != "" && Name != " ")
             {
                 this.Name = Name;
             }
@@ -44,7 +44,7 @@ namespace BT_AUTO_2021_Programing
 
         public void SetEmail(string Email)
         {
-            if (Email == "" || Email == " ")
+            if (Email != "" && Email != " ")
             {
                 this.Email = Email;
             }

@@ -37,7 +37,8 @@ namespace BT_AUTO_2021_Programing
             CylinderVolume(10);
             TorusVolume(5, 5.5);
             TorusVolume(5.5, 5);
-
+            
+            /*
             Book book1 = new Book();
             book1.SetbookName("Twenty Thousand Leagues Under the Seas");
             book1.SetYear(1871);
@@ -48,10 +49,15 @@ namespace BT_AUTO_2021_Programing
             Author Author1 = new Author();
             Author1.SetName("Jules Verne");
             Author1.PrintAuthor();
-
+            */
             Library Lib1 = new Library();
-            //Lib1.PrintLibrary();
-            //book1.Library();
+            Lib1.SetbookName("Twenty Thousand Leagues Under the Seas");
+            Lib1.SetName("Jules Verne");
+            Lib1.SetYear(1871);
+            Lib1.SetPrice(500);
+            
+            Lib1.PrintLibrary();
+            //Lib1.Library();
 
         }
 
