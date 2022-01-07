@@ -38,5 +38,10 @@ namespace BT_AUTO_2021_Programing
         {
             return "This is a square eith side " + side;
         }
+
+        public override void Draw()
+        {
+            Console.WriteLine("Drawing a square");
+        }
     }
 }

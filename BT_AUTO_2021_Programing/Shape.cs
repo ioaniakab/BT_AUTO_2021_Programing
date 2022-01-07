@@ -4,14 +4,23 @@ using System.Text;
 
 namespace BT_AUTO_2021_Programing
 {
-    class Shape
+    class Shape : AbstractShape
     {
 
         ConsoleColor color;
-        public virtual void Draw()
+
+        public override void Color()
+        {
+            Console.WriteLine("Drawing a shape");
+        }
+
+
+        public   override void Draw()
         {
             Console.WriteLine("We are drawing a shape!");
         }
+
+       
 
         public virtual void Erase()
         {
