@@ -22,12 +22,12 @@ namespace BT_AUTO_2021_Programing
         public void GetSalary(double salary)
         {
             this.salary = salary;
-        }*/
-
+        }
+        */
         public static void PrintPersonStatic(Employee p)
         {
             //Person.PrintPersonStatic(p);
-            //Console.WriteLine("Employee first name {0} last name {1} salary {2}", p.GetFirstName, p.GetLastName, p.salary);
+            Console.WriteLine("Employee first name {0} last name {1} salary {2}", p.GetFirstName(), p.GetLastName(), p.salary);
         }
     }
 }

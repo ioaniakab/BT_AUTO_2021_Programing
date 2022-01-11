@@ -59,5 +59,27 @@ namespace BT_AUTO_2021_Programing
             Console.WriteLine("Author's name is " + Name);
         }
 
+        // Correct code!!!!
+        /*
+          string name; 
+        string email;
+
+        public Author(string name, string email)
+        {
+            this.name = name;
+            this.email = email;
+        }
+
+        public string GetName()
+        {
+            return name;
+        }
+
+        public string GetEmail()
+        {
+            return email;
+        }
+         
+         */
     }
 }

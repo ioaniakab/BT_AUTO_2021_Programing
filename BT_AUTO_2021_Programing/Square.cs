@@ -8,6 +8,8 @@ namespace BT_AUTO_2021_Programing
     {
         double side;
 
+        public double Side { get => side; set => side = value; }
+
         public Square(double side)
         {
             this.side = side;

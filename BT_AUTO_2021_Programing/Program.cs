@@ -27,18 +27,82 @@ namespace BT_AUTO_2021_Programing
             //Course06();
             //HomeWorkVolumesAndLibrary();
             //Course07();
-            Course08();
+            //Course08();
+            try
+            {
+                Course09(args);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
 
+        }
+
+        private static void RecursiveMethod()
+        {
+            RecursiveMethod();
+        }
+
+        private static void Course09(string[] args)
+        {
+            try
+            {
+                Console.WriteLine(args[1]);
+                int x = int.Parse(args[0]);
+                int z = 7 / x;
+            }
+            catch (IndexOutOfRangeException ex)
+            {
+                Console.WriteLine("Index out of bounds");
+            }
+            catch (FormatException ex)
+            {
+                Console.WriteLine("Failed to convert to INT!");
+            }
+            catch (DivideByZeroException ex)
+            {
+                Console.WriteLine("Cannot divide by 0");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Oooops there is an exception!!");
+                Console.WriteLine(ex.Message);
+                Console.WriteLine(ex.StackTrace);
+            }
+            finally
+            {
+                Console.WriteLine("The finally block always executes!!");
+            }
+
+            Shape sh = new Shape();
+            try
+            {
+                sh.Draw();
+            }
+            finally
+            {
+                sh.Dispose();
+            }
+
+            // this is equivalent to try / finally from above
+            using (Shape s2 = new Shape())
+            {
+                s2.Draw();
+            }
+
+
+            throw new BtException("End of the call !!");
         }
 
         private static void Course08()
         {
             Person p = new Person("Ionel", "Ionescu", "str. Margelelor nr. 2", "Vartop", "RO");
-            //Employee e = new Employee("Makaduku", "Makao", "Antananarivo", "Madagascar", 1500);
+            Employee e = new Employee("Makaduku", "Makao", "Antananarivo", "Madagascar", "aiurea",1500);
             PartTimeEmployee pe = new PartTimeEmployee("Andrei", "ANtonescu", "Str. Unirii, nr. 5", "Iasi", "Ro", 1000);
 
             Person.PrintPersonStatic(p);
-            //Employee.PrintPersonStatic(e);
+            Employee.PrintPersonStatic(e);
             PartTimeEmployee.PrintPersonStatic(pe);
 
             p.PrintPerson();
