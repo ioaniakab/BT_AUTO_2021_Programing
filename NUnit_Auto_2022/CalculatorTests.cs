@@ -39,7 +39,7 @@ namespace NUnit_Auto_2022
             Assert.AreEqual(result, c.Compute(), 0.0001, "The sum of numbers is not as expected!");
         }
 
-        [TestCase(100, '/', 0, 0)]
+        [TestCase(100, '/', 0)]
 
         public void TestComputeException(double a, char op, double b)
         {
