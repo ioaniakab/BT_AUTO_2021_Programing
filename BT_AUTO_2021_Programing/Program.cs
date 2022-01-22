@@ -28,6 +28,8 @@ namespace BT_AUTO_2021_Programing
             //HomeWorkVolumesAndLibrary();
             //Course07();
             //Course08();
+
+            /*
             try
             {
                 Course09(args);
@@ -36,8 +38,84 @@ namespace BT_AUTO_2021_Programing
             {
                 Console.WriteLine(ex.ToString());
             }
+            */
 
+            HomeworkBuilding();
         }
+
+        private static void HomeworkBuilding()
+        {
+            Room groundfloorR1 = new MeetingRoom(15, 14.5, 10, 1, false);
+            Room groundfloorR2 = new Kitchen(24, 20.2, 2, 2, true, "blue");
+            Room groundfloorR3 = new DepositSpace(20, 10.5, 0);
+            Room groundfloorR4 = new WorkingSpace(30, 13.3, 5, true);
+            Room groundfloorR5 = new MeetingRoom(10, 8.3, 5, 2, true);
+            Room groundfloorR6 = new WorkingSpace(3.1, 4.3, 10, false);
+
+            Room[] roomsgroundfloor = { groundfloorR1, groundfloorR2, groundfloorR3, groundfloorR4, groundfloorR5, groundfloorR6 };
+
+            Floor groundfloor = new Floor(roomsgroundfloor, false);
+
+            Room floor1R1 = new MeetingRoom(10, 11.5, 3, 1, true);
+            Room floor1R2 = new Kitchen(20, 10.2, 2, 2, false, "red");
+            Room floor1R3 = new DepositSpace(15, 10.5, 1);
+            Room floor1R4 = new WorkingSpace(15, 23.3, 10, false);
+            Room floor1R5 = new MeetingRoom(21, 18.3, 5, 1, false);
+
+            Room[] roomsfloor1 = { floor1R1, floor1R2, floor1R3, floor1R4, floor1R5 };
+
+            Floor floor1 = new Floor(roomsfloor1, false);
+
+            Room floor2R1 = new MeetingRoom(15, 18.5, 10, 1, true);
+            Room floor2R2 = new Kitchen(20, 10.2, 2, 10, true, "white");
+            Room floor2R3 = new DepositSpace(11.9, 24.3, 1);
+            Room floor2R4 = new WorkingSpace(15, 23.3, 2, false);
+            Room floor2R5 = new MeetingRoom(11, 1.3, 10, 2, true);
+
+            Room[] roomsfloor2 = { floor2R1, floor2R2, floor2R3, floor2R4, floor2R5 };
+
+            Floor floor2 = new Floor(roomsfloor2, true);
+
+            Room floor3R1 = new MeetingRoom(15, 18.5, 1, 1, true);
+            Room floor3R2 = new Kitchen(20, 10.2, 2, 1, true, "white");
+            Room floor3R3 = new DepositSpace(11.9, 24.3, 10);
+            Room floor3R4 = new WorkingSpace(15, 23.3, 2, false);
+            Room floor3R5 = new MeetingRoom(11, 1.3, 1, 2, true);
+            Room floor3R6 = new DepositSpace(4, 3.1, 0);
+
+            Room[] roomsfloor3 = { floor3R1, floor3R2, floor3R3, floor3R4, floor3R5, floor3R5, floor3R6 };
+
+            Floor floor3 = new Floor(roomsfloor3, true);
+
+            Room floor4R1 = new MeetingRoom(15, 18.5, 1, 1, true);
+            Room floor4R2 = new Kitchen(20, 10.2, 2, 1, true, "purple");
+            Room floor4R3 = new DepositSpace(11.9, 24.3, 2);
+            Room floor4R4 = new WorkingSpace(15, 23.3, 2, false);
+            Room floor4R5 = new MeetingRoom(11, 1.3, 1, 2, true);
+            Room floor4R6 = new DepositSpace(4, 3.1, 0);
+            Room floor4R7 = new MeetingRoom(10, 5, 2, 2, false);
+
+            Room[] roomsfloor4 = { floor4R1, floor4R2, floor4R3, floor4R4, floor4R5, floor4R5, floor4R6, floor4R7 };
+
+            Floor floor4 = new Floor(roomsfloor4, true);
+
+
+            Floor[] building1 = { groundfloor, floor1, floor2, floor3, floor4 };
+
+
+
+            try
+            {
+                Building myBuilding = new Building(building1, 1);
+                Building.PrintBuilding(myBuilding);
+            }
+            catch (BldException e)
+            {
+                Console.WriteLine(e.ToString());
+            }
+        }
+        
+
 
         private static void RecursiveMethod()
         {
