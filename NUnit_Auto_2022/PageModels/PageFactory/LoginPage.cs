@@ -27,7 +27,7 @@ namespace NUnit_Auto_2022.PageModels.PageFactory
         private IWebElement passwordErrElem => driver.FindElement(By.CssSelector("#login-form > div.form-group.row.row-cols-lg-true > div > div > div.text-left.invalid-feedback"));
         private IWebElement submitButtonElem => driver.FindElement(By.ClassName("btn btn-primary"));
 
-        // returnt the text that appeart on the AUTH page to be checked in the test
+        // returnt the text that appear on the AUTH page to be checked in the test
         public LoginPage(IWebDriver driver)
         {
             this.driver = driver;
