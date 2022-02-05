@@ -1,4 +1,5 @@
-﻿using OpenQA.Selenium;
+﻿using NUnit_Auto_2022.PageModels.POM;
+using OpenQA.Selenium;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -25,7 +26,7 @@ namespace NUnit_Auto_2022.PageModels.PageFactory
         private IWebElement passwordLabelElem => driver.FindElement(By.CssSelector("#login-form > div.form-group.row.row-cols-lg-true > label"));
         private IWebElement passwordInputElem => driver.FindElement(By.Id("input-login-password"));
         private IWebElement passwordErrElem => driver.FindElement(By.CssSelector("#login-form > div.form-group.row.row-cols-lg-true > div > div > div.text-left.invalid-feedback"));
-        private IWebElement submitButtonElem => driver.FindElement(By.ClassName("btn btn-primary"));
+        private IWebElement submitButtonElem => driver.FindElement(By.ClassName("btn-primary"));
 
         // returnt the text that appear on the AUTH page to be checked in the test
         public LoginPage(IWebDriver driver)
@@ -33,15 +34,15 @@ namespace NUnit_Auto_2022.PageModels.PageFactory
             this.driver = driver;
         }
 
-        
+
         public string CheckPage()
         {
             return authPageTextElem.Text;
         }
-        
-        public void Login (string user, string pass)
+
+        public void Login(string user, string pass)
         {
-            usernameErrElem.Clear();
+            usernameInputElem.Clear();
             usernameInputElem.SendKeys(user);
             passwordInputElem.Clear();
             passwordInputElem.SendKeys(pass);

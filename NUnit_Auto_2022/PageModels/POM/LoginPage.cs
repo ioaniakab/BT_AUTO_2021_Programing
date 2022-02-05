@@ -6,7 +6,7 @@ using System.Text;
 
 namespace NUnit_Auto_2022.PageModels.POM
 {
-    class LoginPage
+    class LoginPage : BasePage
     {
         const string authPageText = "text-muted"; //class
         const string usernameLabel = "#login-form > div:nth-child(1) > label"; //css
@@ -15,15 +15,17 @@ namespace NUnit_Auto_2022.PageModels.POM
         const string passwordLabel = "#login-form > div.form-group.row.row-cols-lg-true > label"; //css
         const string passwordInput = "input-login-password"; // id
         const string passwordError = "#login-form > div.form-group.row.row-cols-lg-true > div > div > div.text-left.invalid-feedback";//css
-        const string submitButton = "btn btn-primary"; // class
+        const string submitButton = "btn-primary"; // class
 
-        IWebDriver driver;
-
+        /*IWebDriver driver;
         public LoginPage(IWebDriver driver)
         {
             this.driver = driver;
-        }
+        }  */
 
+        public LoginPage(IWebDriver driver) : base(driver)
+        {
+        }
 
         public string CheckPage()
         {
