@@ -11,6 +11,7 @@
     <PackageReference Include="DotNetSeleniumExtras.WaitHelpers" Version="3.11.0" />
     <PackageReference Include="Microsoft.Edge.SeleniumTools" Version="3.141.2" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.9.4" />
+    <PackageReference Include="NPOI" Version="2.5.5" />
     <PackageReference Include="NUnit" Version="3.13.1" />
     <PackageReference Include="NUnit3TestAdapter" Version="3.17.0" />
     <PackageReference Include="coverlet.collector" Version="3.0.2" />
@@ -23,7 +24,7 @@
   </ItemGroup>
 
   <Target Name="PostBuild" AfterTargets="PostBuildEvent">
-    <Exec Command="xcopy /y /F $(ProjectDir)config.properties $(ProjectDir)$(OutDir)config.properties" />
+    <Exec Command="xcopy /y &quot;$(ProjectDir)\*.properties $(ProjectDir)$(OutDir)\&quot; &amp;&#xD;&#xA;xcopy /y &quot;$(ProjectDir)\TestData\*.*&quot; &quot;$(ProjectDir)$(OutDir)\TestData\*.*&quot;" />
   </Target>
 
 </Project>
