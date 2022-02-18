@@ -10,6 +10,7 @@ using System.Text;
 using System.IO;
 using System.Linq;
 using System.Xml.Serialization;
+using MySql.Data.MySqlClient;
 
 namespace NUnit_Auto_2022.Tests.AuthenticationSite
 {
@@ -94,8 +95,37 @@ namespace NUnit_Auto_2022.Tests.AuthenticationSite
 
         }
 
+
+        private static IEnumerable<TestCaseData> GetCredentialsDb()
+        {
+            DataModels.DbConnectionString connString = Utils.JsonRead<DataModels.DbConnectionString>("appsettings.json");
+            String conDetails = connString.ConnectionStrings.DefaultConnection;
+            using (MySqlConnection con = new MySqlConnection(conDetails))
+            {
+                //opening connection
+                con.Open();
+                // prepare to runt the query in the DB
+                string query = "select username, password from test.credetianlsAG;";
+                MySqlCommand cmd = new MySqlCommand(query, con);
+                // run the query in the db and get the data row by row
+                using (var reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        yield return new TestCaseData(reader["username"].ToString(), reader["password"].ToString());
+                    }
+                }
+            }
+        }
+        /*
+        public static IEnumerable<TestCaseData> GetCredentialsEF()
+        {
+            DataModels.DbConnectionString connString = Utils.JsonRead<DataModels.DbConnectionString>("appsettings.json");
+            String conDetails = connString.ConnectionStrings.DefaultConnection;
+
+        }*/
         // Test auth with Page Object model
-        [Test, TestCaseSource("GetCredentialsDataXml")]
+        [Test, TestCaseSource("GetCredentialsDb")]
         public void BasicAuth(string username, string password)
         {
             driver.Navigate().GoToUrl(url + "login");
