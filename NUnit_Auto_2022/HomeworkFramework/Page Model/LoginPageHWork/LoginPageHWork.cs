@@ -26,15 +26,25 @@ namespace NUnit_Auto_2022.Tests.Homework_Framework.LandingPage
         {
             return driver.FindElement(By.ClassName(authPageText)).Text;
         }
-        public void Login(string user, string passw)
+        public void Login(string user, string pass, string usererr, string passerr)
         {
             var usernameInputElement = driver.FindElement(By.Id(usernameInput));
             usernameInputElement.SendKeys(user);
             var passwordInputElement = driver.FindElement(By.Id(passwordInput));
             passwordInputElement.Clear();
-            passwordInputElement.SendKeys(passw);
+            passwordInputElement.SendKeys(pass);
             var submitButtonElement = driver.FindElement(By.ClassName(submitButton));
             submitButtonElement.Submit();
+
+        }
+        public string UserErrCheck()
+        {
+            return driver.FindElement(By.CssSelector(usernameError)).Text;
+        }
+
+        public string PasswordErrCheck()
+        {
+            return driver.FindElement(By.CssSelector(passwordError)).Text;
         }
     }
 }

@@ -42,6 +42,13 @@ namespace NUnit_Auto_2022.Tests.HomeworkTests.RegistrationTests
             
             rp.RegistrationUser(user, pass, confpass, titleVal, fname, lname, emailreg, dob, natio, terms, userErr, passErr, confpassErr, fnameErr, lnameErr, emailErr, eulaErr);
 
+            Assert.AreEqual(userErr, rp.UsernameERR());
+            Assert.AreEqual(passErr, rp.PasswordErr());
+            Assert.AreEqual(confpassErr, rp.ConfPasswordErr());
+            Assert.AreEqual(fnameErr, rp.FirstNamedErr());
+            Assert.AreEqual(lnameErr, rp.LastNamedErr());
+            Assert.AreEqual(emailErr, rp.EmailErr());
+            Assert.AreEqual(eulaErr, rp.EulaErr()); 
         }
     }
 }

@@ -49,7 +49,6 @@ namespace NUnit_Auto_2022.PageModels.POM.RegistrationPageHWork
             return driver.FindElement(By.CssSelector(homeText)).Text;
         }
 
-        
 
         public void RegistrationUser(string user, string pass, string confpass, string titleVal, string fname, string lname, string emailreg, string dob, string natio,
             string terms, string userErr, string passErr, string confpassErr, string fnameErr, string lnameErr, string emailErr, string eulaErr)
@@ -108,29 +107,24 @@ namespace NUnit_Auto_2022.PageModels.POM.RegistrationPageHWork
         
         public string UsernameERR()
         {
-            var usernameErrElement = driver.FindElement(By.CssSelector(usernameerr));
-            return usernameErrElement.Text;
+            return driver.FindElement(By.CssSelector(usernameerr)).Text;
         }
 
         public string PasswordErr()
         {
-            var passwordErrElement = driver.FindElement(By.CssSelector(passworderr));
-            return passwordErrElement.Text;
+            return driver.FindElement(By.CssSelector(passworderr)).Text;
         }
         public string ConfPasswordErr()
         {
-            var confpasswordErrElement = driver.FindElement(By.CssSelector(confirmpasserr));
-            return confpasswordErrElement.Text;
+            return driver.FindElement(By.CssSelector(confirmpasserr)).Text;
         }
         public string FirstNamedErr()
         {
-            var firstnamerErrElement = driver.FindElement(By.CssSelector(firstnameerr));
-            return firstnamerErrElement.Text;
+            return driver.FindElement(By.CssSelector(firstnameerr)).Text;
         }
         public string LastNamedErr()
         {
-            var lastNameErrElement = driver.FindElement(By.CssSelector(lastnameerr));
-            return lastNameErrElement.Text;
+            return driver.FindElement(By.CssSelector(lastnameerr)).Text;
         }
         public string EmailErr()
         {
@@ -138,9 +132,7 @@ namespace NUnit_Auto_2022.PageModels.POM.RegistrationPageHWork
         }
         public string EulaErr()
         {
-            var eulaErrElement = driver.FindElement(By.CssSelector(termserr));
-            return eulaErrElement.Text;
+            return driver.FindElement(By.CssSelector(termserr)).Text;
         }
-              
     }
 }

@@ -14,7 +14,7 @@ namespace NUnit_Auto_2022.Tests.HomeworkTests
 
         private static IEnumerable<TestCaseData> GetLoginCredentialsDataCsv()
         {
-            string path = "TestData\\credentials.csv";
+            string path = "TestData\\logincredentials.csv";
             using (var reader = new StreamReader(path))
             {
                 var index = 0;
@@ -24,7 +24,7 @@ namespace NUnit_Auto_2022.Tests.HomeworkTests
                     var values = line.Split(',');
                     if (index > 0)
                     {
-                        yield return new TestCaseData(values[0], values[1]);
+                        yield return new TestCaseData(values[0], values[1], values[2], values[3]);
                     }
                     index++;
                 }
@@ -32,12 +32,15 @@ namespace NUnit_Auto_2022.Tests.HomeworkTests
         }
 
         [Test, TestCaseSource("GetLoginCredentialsDataCsv")]
-        public void LoginHWork(string username, string password)
+        public void LoginHWork(string user, string pass, string usererr, string passerr)
         {
             driver.Navigate().GoToUrl(url + "login");
             LoginPageHWork lp = new LoginPageHWork(driver);
             Assert.AreEqual("Authentication", lp.CheckMainPage());
-            lp.Login(username, password);
+            lp.Login(user, pass, usererr, passerr);
+
+            Assert.AreEqual(usererr, lp.UserErrCheck());
+            Assert.AreEqual(passerr, lp.PasswordErrCheck());
         }
     }
 }
